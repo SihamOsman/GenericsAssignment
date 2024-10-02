@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Inventory <T extends Vehicle > {
-    private ArrayList<T> inventory;
+    private ArrayList<T> inventory= new ArrayList<>();
 
     public Inventory(String model, String vin, int horsepower, ArrayList<T> inventory) {
         super();
@@ -36,5 +36,8 @@ public class Inventory <T extends Vehicle > {
         return "Inventory{" +
                 "inventory=" + inventory +
                 '}';
+    }
+    public void removefrominventory(String vin) {
+        inventory.removeIf(vehicle -> vehicle.getVin().equals(vin));
     }
 }
